@@ -1,0 +1,46 @@
+PODS:
+  - CocoaLumberjack (3.7.2):
+    - CocoaLumberjack/Core (= 3.7.2)
+  - CocoaLumberjack/Core (3.7.2)
+  - SDWebImage/Core (5.11.1)
+  - SDWebImageSVGCoder (0.3.0):
+    - SDWebImage/Core (~> 5.0)
+    - SVGKit (>= 2.1)
+  - SDWebImageSVGKitPlugin (1.3.0):
+    - SDWebImage/Core (~> 5.10)
+    - SVGKit (>= 2.1)
+  - SVGKit (3.1.0):
+    - CocoaLumberjack (~> 3.0)
+
+DEPENDENCIES:
+  - SDWebImageSVGCoder
+  - SDWebImageSVGKitPlugin
+  - SVGKit (from `https://github.com/SVGKit/SVGKit.git`, branch `3.x`)
+
+SPEC REPOS:
+  http://git.babybus.co/Babybus-iOS/Specs/babybus-specs.git:
+    - CocoaLumberjack
+    - SDWebImage
+    - SDWebImageSVGCoder
+    - SDWebImageSVGKitPlugin
+
+EXTERNAL SOURCES:
+  SVGKit:
+    :branch: 3.x
+    :git: https://github.com/SVGKit/SVGKit.git
+
+CHECKOUT OPTIONS:
+  SVGKit:
+    :commit: 6a594bdc3554a2a630ee27e56c39b8a3f2aa73b3
+    :git: https://github.com/SVGKit/SVGKit.git
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: f3feddf822e2682b2ff7ab8e360ea56c5811905a
+  SDWebImage: 55db1cbf2df90baef064487e06d9237761a981d3
+  SDWebImageSVGCoder: fbc3522b3da59c1d8724538ecc48021911a9cac4
+  SDWebImageSVGKitPlugin: 37f195a6afdbebce6dcff826703b20dfd75194c7
+  SVGKit: 3c8468aab0026048532a3b27a0c81cdd939f0649
+
+PODFILE CHECKSUM: adc4b3f49e512733cabc1bdeef9c054e0137b6ca
+
+COCOAPODS: 1.10.1
