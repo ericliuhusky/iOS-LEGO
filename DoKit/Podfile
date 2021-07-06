@@ -1,0 +1,8 @@
+
+
+target 'DoKit' do
+  use_frameworks!
+
+  pod 'DoraemonKit'
+
+end

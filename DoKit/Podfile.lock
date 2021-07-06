@@ -1,0 +1,36 @@
+PODS:
+  - DoraemonKit (3.0.7):
+    - DoraemonKit/Core (= 3.0.7)
+  - DoraemonKit/Core (3.0.7):
+    - FMDB
+    - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
+  - FMDB (2.7.5.1):
+    - FMDB/standard (= 2.7.5.1)
+  - FMDB/standard (2.7.5.1)
+  - GCDWebServer (3.5.4):
+    - GCDWebServer/Core (= 3.5.4)
+  - GCDWebServer/Core (3.5.4)
+  - GCDWebServer/WebDAV (3.5.4):
+    - GCDWebServer/Core
+  - GCDWebServer/WebUploader (3.5.4):
+    - GCDWebServer/Core
+
+DEPENDENCIES:
+  - DoraemonKit
+
+SPEC REPOS:
+  http://git.babybus.co/Babybus-iOS/Specs/babybus-specs.git:
+    - DoraemonKit
+    - FMDB
+    - GCDWebServer
+
+SPEC CHECKSUMS:
+  DoraemonKit: c96a7c2f0d478a68d0f2d51ec3b0496f15b8fd25
+  FMDB: d0020ff47aa769c5e7a90eb17cdfe2c541710672
+  GCDWebServer: 895b7f0d77664951ec2fe49f85e136818044ea51
+
+PODFILE CHECKSUM: d17fe28033ccc03db69dc5c3bc45533203acd7d6
+
+COCOAPODS: 1.10.1
