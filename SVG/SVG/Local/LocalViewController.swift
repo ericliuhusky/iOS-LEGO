@@ -24,6 +24,11 @@ class LocalViewController: UIViewController {
         imageView.image = .init(named: "dog")
         
         
+//        // 若根据图片的宽高比，重新调整大小时，需要图片尺寸image.size
+//        let imageView = UIImageView(image: .init(named: "dog"))
+//        print(imageView.image?.size)
+        
+        
         // 点击放大
         let tap = UITapGestureRecognizer(target: self, action: #selector(enlarge))
         imageView.addGestureRecognizer(tap)

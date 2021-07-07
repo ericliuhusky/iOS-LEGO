@@ -37,6 +37,12 @@ class NetworkViewController: UIViewController {
         imageView.sd_setImage(with: .init(string: "https://upload.wikimedia.org/wikipedia/commons/7/76/Autism_spectrum_infinity_awareness_symbol.svg"))
         
         
+//        // 若根据图片的宽高比，重新调整大小时，需要图片尺寸image.size
+//        imageView.sd_setImage(with: .init(string: "https://upload.wikimedia.org/wikipedia/commons/7/76/Autism_spectrum_infinity_awareness_symbol.svg")) { image, _, _, _ in
+//            print(image?.size)
+//        }
+        
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(enlarge))
         imageView.addGestureRecognizer(tap)
         imageView.isUserInteractionEnabled = true
