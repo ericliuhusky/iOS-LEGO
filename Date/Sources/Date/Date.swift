@@ -1,6 +1,6 @@
 import Foundation
 
-extension Date {
+public extension Date {
     var year: Int {
         Calendar.current.component(.year, from: self)
     }
@@ -31,34 +31,47 @@ extension Date {
     }
 }
 
-enum DateTimeInterval {
-    case years(Int)
-    case months(Int)
-    case days(Int)
-    case hours(Int)
-    case minutes(Int)
-    case seconds(Int)
-}
 
-
-extension Date {
+public extension Date {
+    enum DateTimeInterval {
+        case years(Int)
+        case months(Int)
+        case days(Int)
+        case hours(Int)
+        case minutes(Int)
+        case seconds(Int)
+    }
+    
     func adding(time: DateTimeInterval) -> Date {
         switch time {
         case let .years(years):
-            return adding(time: .months(years * 12))
+            return Calendar.current.date(byAdding: .year, value: years, to: self) ?? self
         case let .months(months):
-            return adding(time: .days(months * 30))
+            return Calendar.current.date(byAdding: .month, value: months, to: self) ?? self
         case let .days(days):
-            return adding(time: .hours(days * 24))
+            return Calendar.current.date(byAdding: .day, value: days, to: self) ?? self
         case let .hours(hours):
-            return adding(time: .minutes(hours * 60))
+            return Calendar.current.date(byAdding: .hour, value: hours, to: self) ?? self
         case let .minutes(minutes):
-            return adding(time: .seconds(minutes * 60))
+            return Calendar.current.date(byAdding: .minute, value: minutes, to: self) ?? self
         case let .seconds(seconds):
-            return addingTimeInterval(Double(seconds))
+            return Calendar.current.date(byAdding: .second, value: seconds, to: self) ?? self
         }
     }
 }
 
 
-
+public extension Date {
+    init?(date: String, format: String) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        guard let date = formatter.date(from: date) else { return nil }
+        self = date
+    }
+    
+    func string(format: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.string(from: self)
+    }
+}
