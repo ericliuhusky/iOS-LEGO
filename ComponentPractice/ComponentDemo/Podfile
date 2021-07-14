@@ -1,0 +1,10 @@
+source 'http://git.babybus.co/Babybus-iOS/Specs/babybus-specs.git'
+
+target 'ComponentDemo' do
+  use_frameworks! :linkage => :static
+
+  pod 'ComponentA', :path => '../ComponentA'
+  pod 'ComponentB', :path => '../ComponentB'
+  pod 'BBMiddlewareAPI', :path => '../BBMiddlewareAPI'
+
+end
