@@ -1,37 +1,38 @@
 //
 //  String+URL.swift
-//  
 //
-//  Created by lzh on 2021/7/9.
 //
-
-import Foundation
+//  Created by lzh on 2021/8/19.
+//
 
 public extension String {
-    init(param: [String: Any]) {
-        let paramArray = param.map { key, value in
-            return "\(key)=\(value)"
+    /// 使用URL查询参数构建URL编码的查询字符串
+    /// - Parameter parameters: 查询参数字典
+    init(parameters: [String: Any]) {
+        self = parameters.compactMap { key, value in
+            "\(key)=\(value)".urlEncoded
+        }.joined(separator: "&")
+    }
+    
+    /// 获取URL查询字符串对应的URL解码的查询参数字典
+    var parameters: [String: String] {
+        var dict = [String: String]()
+        self.split(separator: "&").forEach { pairs in
+            let pairs = pairs.split(separator: "=")
+            let key = String(pairs[0])
+            let value = pairs.count == 2 ? String(pairs[1]) : ""
+            dict[key] = value.urlDecoded
         }
-        self = paramArray.joined(separator: "&")
+        return dict
     }
     
-    var param: [String: Any] {
-        var dictionary = [String: Any]()
-        let paramArray = self.split(separator: "&")
-        paramArray.forEach { param in
-            let keyValuePair = param.split(separator: "=")
-            let key = String(keyValuePair[0])
-            let value = String(keyValuePair[1])
-            dictionary[key] = value
-        }
-        return dictionary
+    /// URL编码的字符串
+    var urlEncoded: String? {
+        addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
     }
     
-    var urlEncoded: String {
-        return addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-    }
-    
-    var urlDecoded: String {
-        return removingPercentEncoding ?? ""
+    /// URL解码的字符串
+    var urlDecoded: String? {
+        removingPercentEncoding
     }
 }
