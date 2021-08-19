@@ -1,6 +1,6 @@
 //
 //  Crypto+Extensions.swift
-//  BBFoundation_Swift
+//  
 //
 //  Created by lzh on 2021/8/12.
 //
@@ -40,6 +40,3 @@ extension String {
         }
     }
 }
-
-extension String: CryptoCompatible {}
-extension Data: CryptoCompatible {}
